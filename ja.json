@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="3" original="/main/Strings" source-language="en" target-language="ja" datatype="plaintext" project-id="932189" tool-id="crowdin">
+    <header>
+      <tool tool-id="crowdin" tool-name="Crowdin" tool-version="1.1"/>
+    </header>
+    <body>
+      <trans-unit id="1" resname="GREETINGS">
+        <source>hello i am developer and i'm here to resolve the translation issue for client </source>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">こんにちは私は開発者で クライアントの翻訳問題を解決するために来ました </target>
+        <context-group purpose="information">
+          <context context-type="x-crowdin-label">unassigned</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
