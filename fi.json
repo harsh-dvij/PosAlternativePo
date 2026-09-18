@@ -1,10 +1,3 @@
-[
-    {
-        "identifier": "GREETINGS",
-        "source_string": "hello i am developer and i'm here to resolve the translation issue for client ",
-        "translation": "hello i am kehittäjä ja olen täällä ratkaista käännös kysymys asiakkaalle ",
-        "context": "null",
-        "labels": "unassigned",
-        "max_length": null
-    }
-]
+{
+    "GREETINGS": "hello i am kehittäjä ja olen täällä ratkaista käännös kysymys asiakkaalle "
+}
