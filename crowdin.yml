@@ -1,0 +1,6 @@
+preserve_hierarchy: true
+
+files:
+  - source: "/locales/en.json"
+    translation: "/locales/%locale%.json"
+    type: json
