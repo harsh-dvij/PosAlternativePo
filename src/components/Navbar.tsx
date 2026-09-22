@@ -3,7 +3,11 @@ import NavbarContent from "@/components/NavbarContent";
 import { User, Locale } from "@/lib/definitions";
 
 async function getMessages(locale: string) {
-  return (await import(`../lang/${locale}.json`)).default;
+  try {
+    return (await import(`../lang/${locale}.json`)).default;
+  } catch {
+    return (await import(`../lang/en.json`)).default;
+  }
 }
 
 interface Props {

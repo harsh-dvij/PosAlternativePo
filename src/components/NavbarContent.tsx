@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 
 import useOutsideClick from "@/hooks/useOutsideClick";
 import { User, Locale } from "@/lib/definitions";
+import { i18n } from "../../i18n-config";
 
 interface Props {
   user: User;
@@ -121,16 +122,20 @@ export default function NavbarContent({ user, locale, messages }: Props) {
               </button>
 
               {langSwitcherMenuOpen && (
-                <Menu ref={langSwitcherMenuRef} aria-labelledby="lang-switcher-menu-button">
-                  <MenuItem href={`/de/${pathname.split("/").slice(2).join("/")}`} active={locale === "de"}>
-                    <FormattedMessage id="common.language-switcher" values={{ locale: "de" }} />
-                  </MenuItem>
-                  <MenuItem href={`/en/${pathname.split("/").slice(2).join("/")}`} active={locale === "en"}>
-                    <FormattedMessage id="common.language-switcher" values={{ locale: "en" }} />
-                  </MenuItem>
-                  <MenuItem href={`/fr/${pathname.split("/").slice(2).join("/")}`} active={locale === "fr"}>
-                    <FormattedMessage id="common.language-switcher" values={{ locale: "fr" }} />
-                  </MenuItem>
+                <Menu
+                  ref={langSwitcherMenuRef}
+                  aria-labelledby="lang-switcher-menu-button"
+                  className="max-h-96 overflow-y-auto"
+                >
+                  {i18n.locales.map((loc) => {
+                    const pathSuffix = pathname.split("/").slice(2).join("/");
+
+                    return (
+                      <MenuItem key={loc} href={`/${loc}/${pathSuffix}`} active={locale === loc}>
+                        {loc.toUpperCase()}
+                      </MenuItem>
+                    );
+                  })}
                 </Menu>
               )}
             </div>
